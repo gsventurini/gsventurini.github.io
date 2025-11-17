@@ -3915,21 +3915,19 @@ input, select, textarea {
    CUSTOM OVERRIDES — GIULIA VENTURINI
    ======================================================================== */
 
-/* ------------------------------
-   LIGHT COLOR SCHEME
-   ------------------------------ */
+/* ===========================================
+   LIGHT COLOR SCHEME (DEFAULT)
+   =========================================== */
 
 body {
     background: #ffffff;
     color: #222222;
 }
 
-/* Remove original purple overlay */
 body:before {
     background: #ffffff;
 }
 
-/* Main content wrappers (intro, research, teaching, etc.) */
 .wrapper,
 .wrapper.style1,
 .wrapper.style2,
@@ -3937,7 +3935,6 @@ body:before {
     background: #ffffff;
 }
 
-/* Headings & base text colors */
 h1, h2, h3, h4, h5, h6 {
     color: #111111;
 }
@@ -3947,11 +3944,10 @@ p, li {
 }
 
 
-/* ------------------------------
+/* ===========================================
    GLOBAL TYPOGRAPHY
-   ------------------------------ */
+   =========================================== */
 
-/* Keep headings as in the template */
 #wrapper h1 {
     font-size: 2.2rem;
 }
@@ -3960,18 +3956,33 @@ p, li {
     font-size: 1.6rem;
 }
 
-/* Increase paragraph & list text size and line spacing */
+/* Larger, readable body text */
 #wrapper p,
 #wrapper li {
-    font-size: 1.15rem;   /* was smaller; now more readable */
+    font-size: 1.15rem;
     line-height: 1.65;
 }
 
+/* Match intro text size to others */
+#intro p {
+    font-size: 1.15rem !important;
+    line-height: 1.65 !important;
+}
 
-/* ------------------------------
+
+/* ===========================================
+   UNIFIED WIDTH FOR ALL MAIN SECTIONS
+   =========================================== */
+
+.wrapper > .inner {
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+
+/* ===========================================
    INTRO SECTION (WELCOME)
-   Text left, image right
-   ------------------------------ */
+   =========================================== */
 
 .intro-container {
     display: flex;
@@ -3993,53 +4004,45 @@ p, li {
 .intro-image img {
     width: 100%;
     height: auto;
-    max-width: 400px; 
+    max-width: 400px;
     border-radius: 10px;
     object-fit: cover;
 }
 
-/* Mobile layout */
 @media screen and (max-width: 768px) {
     .intro-container {
         flex-direction: column;
         text-align: center;
     }
-
     .intro-image {
         flex: none;
         width: 70%;
     }
-
     .intro-image img {
         width: 100%;
     }
 }
 
 
-/* ------------------------------
-   RESEARCH & TEACHING SECTIONS
-   (HTML5 UP "spotlights" layout)
-   ------------------------------ */
+/* ===========================================
+   RESEARCH & TEACHING (SPOTLIGHTS)
+   =========================================== */
 
-/* Remove original side-by-side image layout and tighten spacing */
 .wrapper.style2.spotlights > section {
     display: block;
     padding: 2.5rem 0;
     background: #ffffff;
-    border-top: 1px solid #dddddd;  /* subtle gray divider */
+    border-top: 1px solid #dddddd;  /* subtle divider */
 }
 
-/* No divider above the very first spotlight section */
 .wrapper.style2.spotlights > section:first-of-type {
     border-top: none;
 }
 
-/* Left-align body text but keep titles centered */
 .spotlights .content {
     text-align: left;
 }
 
-/* Match width to Book Project (≈70rem) */
 .spotlights .content .inner {
     max-width: 70rem;
     width: 100%;
@@ -4047,18 +4050,29 @@ p, li {
     padding: 2rem 0;
 }
 
-/* Centered section titles inside Research/Teaching */
 .spotlights .content .inner h2 {
     text-align: center;
     margin-bottom: 1.5rem;
 }
 
 
-/* ------------------------------
-   SIDEBAR POSITIONING & COLORS
-   ------------------------------ */
+/* ===========================================
+   FIX BOOK PROJECT SPACING
+   =========================================== */
 
-/* Move sidebar nav from vertical center to top */
+#two .inner {
+    padding-top: 2rem;
+}
+
+#two h2 {
+    margin-top: 0;
+}
+
+
+/* ===========================================
+   SIDEBAR POSITION, COLORS & ACTIVE STATE
+   =========================================== */
+
 #sidebar > .inner {
     display: flex;
     flex-direction: column;
@@ -4066,7 +4080,6 @@ p, li {
     padding-top: 2.5rem;
 }
 
-/* Light sidebar background */
 #sidebar {
     background: #f4f4f8;
 }
@@ -4083,33 +4096,174 @@ p, li {
     color: #000000;
 }
 
-
-/* ------------------------------
-   LINKS — SOFT ACCESSIBLE BLUE
-   ------------------------------ */
-
-a {
-    color: #3366bb;                          /* soft academic blue */
-    text-decoration-color: #c3cfea;         /* subtle underline color */
-}
-
-a:hover {
-    color: #1a4c96;                          /* slightly deeper on hover */
-    text-decoration-color: #1a4c96;
-}
-
-/* ===========================================
-   SIDEBAR ACTIVE LINK OVERRIDE
-   =========================================== */
-
+/* Active link should NOT turn white */
 #sidebar nav a.active {
-    color: #000000 !important;       /* strong black */
-    font-weight: 700 !important;     /* bold */
-    opacity: 1 !important;           /* remove faintness */
+    color: #000000 !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
 }
 
-/* Make the underline (divider) also darker when active */
 #sidebar nav a.active:before {
     background-color: #000000 !important;
     opacity: 1 !important;
+}
+
+
+/* ===========================================
+   LINKS — SOFT ACCESSIBLE BLUE
+   =========================================== */
+
+a {
+    color: #3366bb;
+    text-decoration-color: #c3cfea;
+}
+
+a:hover {
+    color: #1a4c96;
+    text-decoration-color: #1a4c96;
+}
+
+
+/* ===========================================
+   FOOTER — REMOVE PURPLE
+   =========================================== */
+
+#footer {
+    background: #f4f4f8 !important;
+    color: #222222 !important;
+    border-top: 1px solid #dddddd;
+}
+
+#footer a {
+    color: #3366bb !important;
+}
+
+#footer a:hover {
+    color: #1a4c96 !important;
+}
+
+
+/* ===========================================
+   THEME TOGGLE BUTTON
+   =========================================== */
+
+.theme-toggle {
+    margin-top: 1.5rem;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    border: 1px solid #cccccc;
+    background: #ffffff;
+    color: #333333;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.theme-toggle:hover {
+    background: #f0f0f0;
+}
+
+/* ===========================================
+   DARK MODE THEME
+   (activated via body.dark-mode)
+   =========================================== */
+
+body.dark-mode {
+    background: #101018;
+    color: #f3f3f6;
+}
+
+body.dark-mode:before {
+    background: #101018;
+}
+
+body.dark-mode .wrapper,
+body.dark-mode .wrapper.style1,
+body.dark-mode .wrapper.style2,
+body.dark-mode .wrapper.style3 {
+    background: #101018;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: #ffffff;
+}
+
+body.dark-mode p,
+body.dark-mode li {
+    color: #e2e2ea;
+}
+
+/* Research & Teaching cards */
+body.dark-mode .wrapper.style2.spotlights > section {
+    background: #151524;
+    border-top-color: #333344;
+}
+
+/* Sidebar dark */
+body.dark-mode #sidebar {
+    background: #141423;
+}
+
+body.dark-mode #sidebar .inner {
+    color: #f3f3f6;
+}
+
+body.dark-mode #sidebar nav a {
+    color: #d0d0e0;
+}
+
+body.dark-mode #sidebar nav a:hover {
+    color: #ffffff;
+}
+
+body.dark-mode #sidebar nav a.active {
+    color: #ffffff !important;
+}
+
+body.dark-mode #sidebar nav a.active:before {
+    background-color: #ffffff !important;
+}
+
+/* Links in dark mode */
+body.dark-mode a {
+    color: #8fb4ff;
+    text-decoration-color: #5066a8;
+}
+
+body.dark-mode a:hover {
+    color: #c3d4ff;
+    text-decoration-color: #c3d4ff;
+}
+
+/* Footer in dark mode */
+body.dark-mode #footer {
+    background: #141423 !important;
+    color: #e2e2ea !important;
+    border-top-color: #333344;
+}
+
+body.dark-mode #footer a {
+    color: #8fb4ff !important;
+}
+
+body.dark-mode #footer a:hover {
+    color: #c3d4ff !important;
+}
+
+/* Dark mode toggle button look */
+body.dark-mode .theme-toggle {
+    background: #141423;
+    color: #f3f3f6;
+    border-color: #444466;
+}
+
+body.dark-mode .theme-toggle:hover {
+    background: #1c1c33;
 }
