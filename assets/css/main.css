@@ -3956,5 +3956,18 @@ input, select, textarea {
     }
 }
 
+/* Center text in Research & Teaching sections (spotlights) */
+.wrapper.style2.spotlights > section {
+    display: block; /* overrides the default side-by-side layout */
+}
+
+.spotlights .content {
+    text-align: center;
+}
+
+.spotlights .content .inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
 
 
