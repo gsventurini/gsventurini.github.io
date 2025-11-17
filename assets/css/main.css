@@ -3995,5 +3995,67 @@ input, select, textarea {
     padding: 2.5rem 0; /* default is ~4rem */
 }
 
+/* =========================
+   Custom light color scheme
+   ========================= */
+
+/* Global text & background */
+body {
+    background: #ffffff;
+    color: #222222;
+}
+
+/* Remove purple gradient background */
+body:before {
+    background: #ffffff;
+}
+
+/* Main content wrappers (intro, research, teaching, etc.) */
+.wrapper,
+.wrapper.style1,
+.wrapper.style2,
+.wrapper.style3 {
+    background: #ffffff;
+}
+
+/* Spotlights subsections (Research / Teaching cards) */
+.wrapper.style2.spotlights > section {
+    background: #ffffff;
+}
+
+/* Headings & normal text */
+h1, h2, h3, h4, h5, h6 {
+    color: #111111;
+}
+
+p, li {
+    color: #222222;
+}
+
+/* Links */
+a {
+    color: #0055aa;
+}
+
+a:hover {
+    color: #003f7d;
+}
+
+/* Sidebar: keep it, but make it light */
+#sidebar {
+    background: #f4f4f8;
+}
+
+#sidebar .inner {
+    color: #222222;
+}
+
+#sidebar nav a {
+    color: #444444;
+}
+
+#sidebar nav a:hover {
+    color: #000000;
+}
 
 
