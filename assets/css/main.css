@@ -3956,18 +3956,34 @@ input, select, textarea {
     }
 }
 
-/* Center text in Research & Teaching sections (spotlights) */
+/* Layout of Research & Teaching sections (spotlights) */
 .wrapper.style2.spotlights > section {
-    display: block; /* overrides the default side-by-side layout */
+    display: block;  /* keep image-free, full-width sections */
 }
 
+/* Center the block itself, but left-align the body text */
 .spotlights .content {
-    text-align: center;
+    text-align: left;
 }
 
 .spotlights .content .inner {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 800px;   /* keeps lines readable */
+    margin: 0 auto;     /* centers the whole block in the purple area */
 }
+
+/* Only the titles (h2) are centered */
+.spotlights .content .inner h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Move sidebar nav from vertical center to top */
+#sidebar > .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  /* was center */
+    padding-top: 2.5rem;          /* add some breathing room at the top */
+}
+
 
 
