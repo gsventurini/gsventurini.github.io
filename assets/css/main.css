@@ -3985,5 +3985,14 @@ input, select, textarea {
     padding-top: 2.5rem;          /* add some breathing room at the top */
 }
 
+/* Reduce vertical spacing between spotlight subsections */
+.wrapper.style2.spotlights > section {
+    padding: 3rem 0;   /* default is ~6–8rem depending on viewport */
+}
+
+/* Optional: reduce spacing inside each content block */
+.spotlights .content .inner {
+    padding: 2.5rem 0; /* default is ~4rem */
+}
 
 
