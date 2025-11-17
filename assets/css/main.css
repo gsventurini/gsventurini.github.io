@@ -3911,9 +3911,68 @@ input, select, textarea {
 
 
 
-/* own and chatGPT changes */
+/* ========================================================================
+   CUSTOM OVERRIDES — GIULIA VENTURINI
+   ======================================================================== */
 
-/* Intro: text left, image right (~40% width) */
+/* ------------------------------
+   LIGHT COLOR SCHEME
+   ------------------------------ */
+
+body {
+    background: #ffffff;
+    color: #222222;
+}
+
+/* Remove original purple overlay */
+body:before {
+    background: #ffffff;
+}
+
+/* Main content wrappers (intro, research, teaching, etc.) */
+.wrapper,
+.wrapper.style1,
+.wrapper.style2,
+.wrapper.style3 {
+    background: #ffffff;
+}
+
+/* Headings & base text colors */
+h1, h2, h3, h4, h5, h6 {
+    color: #111111;
+}
+
+p, li {
+    color: #222222;
+}
+
+
+/* ------------------------------
+   GLOBAL TYPOGRAPHY
+   ------------------------------ */
+
+/* Keep headings as in the template */
+#wrapper h1 {
+    font-size: 2.2rem;
+}
+
+#wrapper h2 {
+    font-size: 1.6rem;
+}
+
+/* Increase paragraph & list text size and line spacing */
+#wrapper p,
+#wrapper li {
+    font-size: 1.15rem;   /* was smaller; now more readable */
+    line-height: 1.65;
+}
+
+
+/* ------------------------------
+   INTRO SECTION (WELCOME)
+   Text left, image right
+   ------------------------------ */
+
 .intro-container {
     display: flex;
     align-items: center;
@@ -3934,7 +3993,7 @@ input, select, textarea {
 .intro-image img {
     width: 100%;
     height: auto;
-    max-width: 400px;   /* prevents overly huge images */
+    max-width: 400px; 
     border-radius: 10px;
     object-fit: cover;
 }
@@ -3956,99 +4015,58 @@ input, select, textarea {
     }
 }
 
-/* Layout of Research & Teaching sections (spotlights) */
+
+/* ------------------------------
+   RESEARCH & TEACHING SECTIONS
+   (HTML5 UP "spotlights" layout)
+   ------------------------------ */
+
+/* Remove original side-by-side image layout and tighten spacing */
 .wrapper.style2.spotlights > section {
-    display: block;       /* keep image-free, full-width sections */
-    padding: 2.5rem 0;    /* reduced vertical spacing between subsections */
+    display: block;
+    padding: 2.5rem 0;
+    background: #ffffff;
+    border-top: 1px solid #dddddd;  /* subtle gray divider */
 }
 
-/* Center the block itself, but left-align the body text */
+/* No divider above the very first spotlight section */
+.wrapper.style2.spotlights > section:first-of-type {
+    border-top: none;
+}
+
+/* Left-align body text but keep titles centered */
 .spotlights .content {
     text-align: left;
 }
 
+/* Match width to Book Project (≈70rem) */
 .spotlights .content .inner {
-    max-width: 60rem;     /* wider, like Book Project */
-    margin: 0 auto;       /* centers the whole block */
-    padding: 2rem 0;      /* slightly tighter internal spacing */
+    max-width: 70rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 0;
 }
 
-/* Only the titles (h2) are centered */
+/* Centered section titles inside Research/Teaching */
 .spotlights .content .inner h2 {
     text-align: center;
     margin-bottom: 1.5rem;
 }
 
+
+/* ------------------------------
+   SIDEBAR POSITIONING & COLORS
+   ------------------------------ */
+
 /* Move sidebar nav from vertical center to top */
 #sidebar > .inner {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;  /* was center */
-    padding-top: 2.5rem;          /* breathing room at the top */
+    justify-content: flex-start;
+    padding-top: 2.5rem;
 }
 
-/* =========================
-   Custom light color scheme
-   ========================= */
-
-/* Global text & background */
-body {
-    background: #ffffff;
-    color: #222222;
-}
-
-/* Remove purple gradient background */
-body:before {
-    background: #ffffff;
-}
-
-/* Main content wrappers (intro, research, teaching, etc.) */
-.wrapper,
-.wrapper.style1,
-.wrapper.style2,
-.wrapper.style3 {
-    background: #ffffff;
-}
-
-/* Spotlights subsections (Research / Teaching cards) */
-.wrapper.style2.spotlights > section {
-    background: #ffffff;
-}
-
-/* Headings & normal text colors */
-h1, h2, h3, h4, h5, h6 {
-    color: #111111;
-}
-
-p, li {
-    color: #222222;
-}
-
-/* Global typography for all main sections */
-#wrapper h1 {
-    font-size: 2.2rem;
-}
-
-#wrapper h2 {
-    font-size: 1.6rem;
-}
-
-#wrapper p,
-#wrapper li {
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
-
-/* Links */
-a {
-    color: #0055aa;
-}
-
-a:hover {
-    color: #003f7d;
-}
-
-/* Sidebar: keep it, but make it light */
+/* Light sidebar background */
 #sidebar {
     background: #f4f4f8;
 }
@@ -4066,4 +4084,32 @@ a:hover {
 }
 
 
+/* ------------------------------
+   LINKS — SOFT ACCESSIBLE BLUE
+   ------------------------------ */
 
+a {
+    color: #3366bb;                          /* soft academic blue */
+    text-decoration-color: #c3cfea;         /* subtle underline color */
+}
+
+a:hover {
+    color: #1a4c96;                          /* slightly deeper on hover */
+    text-decoration-color: #1a4c96;
+}
+
+/* ===========================================
+   SIDEBAR ACTIVE LINK OVERRIDE
+   =========================================== */
+
+#sidebar nav a.active {
+    color: #000000 !important;       /* strong black */
+    font-weight: 700 !important;     /* bold */
+    opacity: 1 !important;           /* remove faintness */
+}
+
+/* Make the underline (divider) also darker when active */
+#sidebar nav a.active:before {
+    background-color: #000000 !important;
+    opacity: 1 !important;
+}
