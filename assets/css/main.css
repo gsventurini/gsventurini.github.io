@@ -4287,3 +4287,42 @@ body.dark-mode .theme-toggle:hover {
     background: #1c1c33;
 }
 
+#sidebar > .inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.menu-wrapper {
+    flex-grow: 1;   /* pushes toggle down */
+}
+
+.theme-toggle {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 2px solid #cccccc;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #333333;
+    margin: 1.5rem 0 2rem 0;
+    transition: all 0.25s ease;
+}
+
+.theme-toggle:hover {
+    background: #f0f0f0;
+}
+
+body.dark-mode .theme-toggle {
+    background: transparent;
+    border-color: #666688;
+    color: #f3f3f6;
+}
+
+body.dark-mode .theme-toggle:hover {
+    background: #1a1a2a;
+}
