@@ -4144,25 +4144,44 @@ a:hover {
 
 
 /* ===========================================
-   THEME TOGGLE BUTTON
+   THEME TOGGLE — ICON ONLY BUTTON
    =========================================== */
 
 .theme-toggle {
-    margin-top: 1.5rem;
-    padding: 0.35rem 0.9rem;
-    font-size: 0.8rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    border-radius: 999px;
-    border: 1px solid #cccccc;
+    width: 42px;
+    height: 42px;
+    font-size: 1.3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     background: #ffffff;
     color: #333333;
+
+    border: 1px solid #cccccc;
+    border-radius: 50%;
+
     cursor: pointer;
     align-self: flex-start;
+
+    margin: 1rem 0 2rem 0;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 
 .theme-toggle:hover {
     background: #f0f0f0;
+}
+
+/* Dark mode variant */
+body.dark-mode .theme-toggle {
+    background: #141423;
+    color: #f3f3f6;
+    border-color: #444466;
+}
+
+body.dark-mode .theme-toggle:hover {
+    background: #1c1c33;
 }
 
 /* ===========================================
@@ -4267,3 +4286,4 @@ body.dark-mode .theme-toggle {
 body.dark-mode .theme-toggle:hover {
     background: #1c1c33;
 }
+
