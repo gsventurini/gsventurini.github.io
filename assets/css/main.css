@@ -4349,59 +4349,67 @@ body.dark-mode .theme-toggle:hover {
 
 .social-horizontal.icon-only {
     display: grid;
-    grid-template-columns: repeat(2, 50px);  /* two equal columns */
-    grid-row-gap: 1.2rem;                    /* space between rows */
-    grid-column-gap: 2rem;                   /* space between columns */
+    grid-template-columns: repeat(2, 50px);  /* 2 equal columns */
+    grid-row-gap: 1.2rem;
+    grid-column-gap: 2rem;
 
     list-style: none;
     padding: 0;
     margin: 1.5rem 0;
-    max-width: 450px;                        /* keeps layout tidy */
+    max-width: 450px;
 }
 
-/* Remove underline decoration applied by Hyperspace template */
-.social-horizontal.icon-only li a::after {
+/* Remove template underline (the dotted line) */
+.social-horizontal.icon-only li a:before {
     display: none !important;
 }
 
-/* Icon-only link boxes */
+/* Icon-only link container: circular with border */
 .social-horizontal.icon-only li a {
     display: flex;
     align-items: center;
     justify-content: center;
+
     width: 50px;
     height: 50px;
+    border-radius: 50%;
 
     text-decoration: none !important;
     color: inherit;
+
+    border: 2px solid #333333;      /* border in light mode */
+    background: transparent;
+    box-sizing: border-box;
 }
 
 /* SVG icons (Bluesky, ORCID, Scholar) */
 .social-horizontal.icon-only .social-icon {
     width: 28px;
     height: 28px;
+    display: block;
 
-    filter: none !important;
+    filter: none !important;         /* keep original colors */
     mix-blend-mode: normal !important;
     background: transparent !important;
-    display: block;
 }
 
 /* GitHub Font Awesome icon */
 .social-horizontal.icon-only i {
     font-size: 28px;
     display: inline-block;
-    filter: none !important;
+    filter: none !important;         /* keep original colors */
 }
 
 /* ===========================================
-   DARK MODE — MAKE ICONS WHITE
+   DARK MODE — KEEP COLORS, JUST WHITE BORDER
    =========================================== */
 
-body.dark-mode .social-horizontal.icon-only .social-icon {
-    filter: brightness(0) invert(1) !important;
+body.dark-mode .social-horizontal.icon-only li a {
+    border-color: #ffffff;           /* white ring in dark mode */
 }
 
+/* Icons themselves stay their original colors */
+body.dark-mode .social-horizontal.icon-only .social-icon,
 body.dark-mode .social-horizontal.icon-only i {
-    filter: brightness(0) invert(1) !important;
+    filter: none !important;
 }
