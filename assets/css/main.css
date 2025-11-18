@@ -4144,47 +4144,6 @@ a:hover {
 
 
 /* ===========================================
-   THEME TOGGLE — ICON ONLY BUTTON
-   =========================================== */
-
-.theme-toggle {
-    width: 42px;
-    height: 42px;
-    font-size: 1.3rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #ffffff;
-    color: #333333;
-
-    border: 1px solid #cccccc;
-    border-radius: 50%;
-
-    cursor: pointer;
-    align-self: flex-start;
-
-    margin: 1rem 0 2rem 0;
-    transition: background 0.2s, color 0.2s, border-color 0.2s;
-}
-
-.theme-toggle:hover {
-    background: #f0f0f0;
-}
-
-/* Dark mode variant */
-body.dark-mode .theme-toggle {
-    background: #141423;
-    color: #f3f3f6;
-    border-color: #444466;
-}
-
-body.dark-mode .theme-toggle:hover {
-    background: #1c1c33;
-}
-
-/* ===========================================
    DARK MODE THEME
    (activated via body.dark-mode)
    =========================================== */
@@ -4317,6 +4276,63 @@ body.dark-mode .theme-toggle:hover {
     background: #f0f0f0;
 }
 
+body.dark-mode .theme-toggle {
+    background: transparent;
+    border-color: #666688;
+    color: #f3f3f6;
+}
+
+body.dark-mode .theme-toggle:hover {
+    background: #1a1a2a;
+}
+
+/* ===========================================
+   SIDEBAR LAYOUT & THEME TOGGLE POSITION
+   =========================================== */
+
+/* Sidebar inner uses flex so we can push the toggle to the bottom */
+#sidebar > .inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Nav area grows to fill space, pushing the button down */
+.menu-wrapper {
+    flex-grow: 1;
+}
+
+/* ===========================================
+   THEME TOGGLE — SMALL ROUND ICON ONLY
+   =========================================== */
+
+/* Reset all default button styles, then re-apply only what we want */
+.theme-toggle {
+    all: unset;
+    box-sizing: border-box;
+
+    width: 32px;
+    height: 32px;
+    font-size: 1.1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    border: 2px solid #cccccc;
+    color: #333333;
+    cursor: pointer;
+
+    margin: 1.5rem 0 2rem 0;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background: #f0f0f0;
+}
+
+/* Dark mode look for the icon */
 body.dark-mode .theme-toggle {
     background: transparent;
     border-color: #666688;
