@@ -4342,3 +4342,57 @@ body.dark-mode .theme-toggle {
 body.dark-mode .theme-toggle:hover {
     background: #1a1a2a;
 }
+
+/* ===========================================
+   SOCIAL ICONS — HORIZONTAL ROW
+   =========================================== */
+
+/* Turn the social list into a horizontal row */
+.social-horizontal {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;      /* spacing between icons */
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+/* Each social item */
+.social-horizontal li a {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;      /* space between icon and label */
+    text-decoration: none;
+    color: inherit;   /* adopt theme text color */
+}
+
+/* SVG icons (Bluesky, ORCID, Scholar) */
+.social-horizontal .social-icon {
+    width: 1.35em;
+    height: 1.35em;
+    vertical-align: middle;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+}
+
+/* GitHub icon (Font Awesome) */
+.social-horizontal i {
+    font-size: 1.35em;
+}
+
+/* Label formatting */
+.social-horizontal .label {
+    font-size: 1em;
+}
+
+/* ===========================================
+   DARK MODE — invert icons so they show white
+   =========================================== */
+
+body.dark-mode .social-horizontal .social-icon {
+    filter: brightness(0) invert(1) !important;
+}
+
+body.dark-mode .social-horizontal i {
+    filter: brightness(0) invert(1);
+}
