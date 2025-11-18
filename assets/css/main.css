@@ -4344,67 +4344,64 @@ body.dark-mode .theme-toggle:hover {
 }
 
 /* ===========================================
-   SOCIAL ICONS — 2×2 GRID LAYOUT
+   SOCIAL ICONS — 2×2 GRID, ICON-ONLY
    =========================================== */
 
-.social-horizontal {
+.social-horizontal.icon-only {
     display: grid;
-    grid-template-columns: repeat(2, minmax(160px, 1fr)); /* 2 equal columns */
-    grid-row-gap: 1.2rem;   /* spacing between rows */
-    grid-column-gap: 2rem;  /* spacing between columns */
+    grid-template-columns: repeat(2, 50px);  /* two equal columns */
+    grid-row-gap: 1.2rem;                    /* space between rows */
+    grid-column-gap: 2rem;                   /* space between columns */
 
     list-style: none;
     padding: 0;
     margin: 1.5rem 0;
-    max-width: 450px;  /* keeps layout consistent on all screens */
+    max-width: 450px;                        /* keeps layout tidy */
 }
 
-/* Remove template underline decoration */
-.social-horizontal li a::after {
+/* Remove underline decoration applied by Hyperspace template */
+.social-horizontal.icon-only li a::after {
     display: none !important;
 }
 
-.social-horizontal li a {
+/* Icon-only link boxes */
+.social-horizontal.icon-only li a {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+
     text-decoration: none !important;
     color: inherit;
 }
 
-/* SVG icons */
-.social-horizontal .social-icon {
-    width: 1.4em;
-    height: 1.4em;
-    vertical-align: middle;
+/* SVG icons (Bluesky, ORCID, Scholar) */
+.social-horizontal.icon-only .social-icon {
+    width: 28px;
+    height: 28px;
 
     filter: none !important;
     mix-blend-mode: normal !important;
     background: transparent !important;
+    display: block;
 }
 
-/* GitHub icon (FontAwesome) */
-.social-horizontal i {
-    font-size: 1.4em;
+/* GitHub Font Awesome icon */
+.social-horizontal.icon-only i {
+    font-size: 28px;
     display: inline-block;
     filter: none !important;
 }
 
-/* Text labels */
-.social-horizontal .label {
-    font-size: 1em;
-    color: inherit;
-}
-
 /* ===========================================
-   DARK MODE — CLEAN WHITE ICONS
+   DARK MODE — MAKE ICONS WHITE
    =========================================== */
 
-body.dark-mode .social-horizontal .social-icon {
+body.dark-mode .social-horizontal.icon-only .social-icon {
     filter: brightness(0) invert(1) !important;
-    mix-blend-mode: normal !important;
 }
 
-body.dark-mode .social-horizontal i {
+body.dark-mode .social-horizontal.icon-only i {
     filter: brightness(0) invert(1) !important;
 }
