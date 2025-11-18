@@ -4344,55 +4344,67 @@ body.dark-mode .theme-toggle:hover {
 }
 
 /* ===========================================
-   SOCIAL ICONS — HORIZONTAL ROW
+   SOCIAL ICONS — 2×2 GRID LAYOUT
    =========================================== */
 
-/* Turn the social list into a horizontal row */
 .social-horizontal {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;      /* spacing between icons */
+    display: grid;
+    grid-template-columns: repeat(2, minmax(160px, 1fr)); /* 2 equal columns */
+    grid-row-gap: 1.2rem;   /* spacing between rows */
+    grid-column-gap: 2rem;  /* spacing between columns */
+
     list-style: none;
     padding: 0;
     margin: 1.5rem 0;
+    max-width: 450px;  /* keeps layout consistent on all screens */
 }
 
-/* Each social item */
+/* Remove template underline decoration */
+.social-horizontal li a::after {
+    display: none !important;
+}
+
 .social-horizontal li a {
     display: flex;
     align-items: center;
-    gap: 0.4rem;      /* space between icon and label */
-    text-decoration: none;
-    color: inherit;   /* adopt theme text color */
+    gap: 0.5rem;
+    text-decoration: none !important;
+    color: inherit;
 }
 
-/* SVG icons (Bluesky, ORCID, Scholar) */
+/* SVG icons */
 .social-horizontal .social-icon {
-    width: 1.35em;
-    height: 1.35em;
+    width: 1.4em;
+    height: 1.4em;
     vertical-align: middle;
+
     filter: none !important;
     mix-blend-mode: normal !important;
+    background: transparent !important;
 }
 
-/* GitHub icon (Font Awesome) */
+/* GitHub icon (FontAwesome) */
 .social-horizontal i {
-    font-size: 1.35em;
+    font-size: 1.4em;
+    display: inline-block;
+    filter: none !important;
 }
 
-/* Label formatting */
+/* Text labels */
 .social-horizontal .label {
     font-size: 1em;
+    color: inherit;
 }
 
 /* ===========================================
-   DARK MODE — invert icons so they show white
+   DARK MODE — CLEAN WHITE ICONS
    =========================================== */
 
 body.dark-mode .social-horizontal .social-icon {
     filter: brightness(0) invert(1) !important;
+    mix-blend-mode: normal !important;
 }
 
 body.dark-mode .social-horizontal i {
-    filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1) !important;
 }
